@@ -1,43 +1,33 @@
 class Travel:
     
-    def __init__(self):
-        self.ref_number = None
-        self.disclosure_group = None
-        self.title_en = None
-        self.title_fr = None
-        self.name = None
-        self.purpose_en = None
-        self.purpose_fr = None
-        self.start_date = None
-        self.end_date = None
-        self.destination_en = None
-        self.destination_fr = None
-        self.airfare = None
-        self.other_transport = None
-        self.lodging = None
-        self.meals = None
-        self.other_expenses = None
-        self.total = None
-        self.additional_comments_en = None
-        self.additional_comments_fr = None
-        self.owner_org = None
-        self.owner_org_title = None
-
-    @classmethod
-    def get_data(cls):
-        return cls.__dict__
+    def __init__(self, ref_number=None, disclosure_group=None, title_en=None, title_fr=None, name=None, purpose_en=None, purpose_fr=None,
+                 start_date=None, end_date=None, destination_en=None, destination_fr=None, airfare=None, other_transport=None,
+                 lodging=None, meals=None, other_expenses=None, total=None,
+                 additional_comments_en=None, additional_comments_fr=None, owner_org=None, owner_org_title=None):
+        self.ref_number = ref_number
+        self.disclosure_group = disclosure_group
+        self.title_en = title_en
+        self.title_fr = title_fr
+        self.name = name
+        self.purpose_en = purpose_en
+        self.purpose_fr = purpose_fr
+        self.start_date = start_date
+        self.end_date = end_date
+        self.destination_en = destination_en
+        self.destination_fr = destination_fr
+        self.airfare = airfare
+        self.other_transport = other_transport
+        self.lodging = lodging
+        self.meals = meals
+        self.other_expenses = other_expenses
+        self.total = total
+        self.additional_comments_en = additional_comments_en
+        self.additional_comments_fr = additional_comments_fr
+        self.owner_org = owner_org
+        self.owner_org_title = owner_org_title
     
     def print(self):
-        all_objects = self.get_data()
+        all_objects = self.__dict__
         for data in all_objects:
-            print(f"[{data}: {all_objects[data]}]")
-
-        # print(
-        #     f"[ref_number: {self.ref_number}, disclosure_group: {self.disclosure_group}, title_en: {self.title_en}, title_fr: {self.title_fr}, "
-        #     f"name: {self.name}, purpose_en: {self.purpose_en}, purpose_fr: {self.purpose_fr}, "
-        #     f"start_date: {self.start_date}, end_date: {self.end_date}, destination_en: {self.destination_en}, "
-        #     f"destination_fr: {self.destination_fr}, airfare: {self.airfare}, other_transport: {self.other_transport}, lodging: {self.lodging}, "
-        #     f"meals: {self.meals}, other_expenses: {self.other_expenses}, total: {self.total},"
-        #     f"additional_comments_en: {self.additional_comments_en}, additional_comments_fr: {self.additional_comments_fr}, owner_org: {self.owner_org},"
-        #     f"owner_org_title: {self.owner_org_title}]")
+            print(f"[{data}: {all_objects[data]}]", end=" ")
 

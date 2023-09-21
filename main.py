@@ -33,7 +33,7 @@ def read_csv_file(file):
 def show_results(file):
     for i, record in enumerate(read_csv_file(file)[:20]):
         print(f"position: {i+1}")
-        print(record)
+        print(Travel(**record).print())
 
 
 fetch_csv_file("travelq.csv")
