@@ -8,32 +8,28 @@ travel = Travel()
 # Fetch csv file and get results
 def fetch_csv_file(file):
     try:
+        # open/close file management
         with open(file, "r", encoding="utf-8-sig") as read_file:
             lines = read_file.read().splitlines()
     except FileNotFoundError:
         raise FileNotFoundError("File doesn't exist")
     else:
-        return show_results(lines)
+        return read_csv_file(lines)
 
 
-# Read csv
+# Read csv by travel module
 def read_csv_file(file):
     travel_dict = travel.__dict__
-    reader = csv.DictReader(file)  # get dict instead of a list
+    reader = csv.DictReader(file)  # get dict of list of data
     records = []
 
-    for row in reader:
+    for i, row in enumerate(reader):
         for column in row:
             travel_dict[column] = row[column]
         records.append(travel_dict)
-    return records
-
-
-# Get results
-def show_results(file):
-    for i, record in enumerate(read_csv_file(file)[:20]):
-        print(f"position: {i+1}")
-        print(record)
+        if i > 20:
+            break
+        print(Travel(**records[i]).print())
 
 
 fetch_csv_file("travelq.csv")
