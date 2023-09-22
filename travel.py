@@ -40,4 +40,3 @@ class Travel:
         #     f"meals: {self.meals}, other_expenses: {self.other_expenses}, total: {self.total},"
         #     f"additional_comments_en: {self.additional_comments_en}, additional_comments_fr: {self.additional_comments_fr}, owner_org: {self.owner_org},"
         #     f"owner_org_title: {self.owner_org_title}]")
-
